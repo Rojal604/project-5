@@ -3,7 +3,7 @@
  * This is used to prefix asset paths when deployed to GitHub Pages
  */
 export function getBasePath() {
-    return process.env.NODE_ENV === 'production' ? '/project-5' : ''
+    return process.env.NEXT_PUBLIC_BASE_PATH || ''
 }
 
 /**
