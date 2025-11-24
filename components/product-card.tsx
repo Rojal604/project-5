@@ -7,6 +7,7 @@ import { useCart, useWishlist } from "@/lib/store"
 import { Button } from "@/components/ui/button"
 import type { Product } from "@/lib/products"
 import { AnimatedStars } from "@/components/animated-stars"
+import { getImagePath } from "@/lib/utils-path"
 
 interface ProductCardProps {
   product: Product
@@ -40,7 +41,7 @@ export function ProductCard({ product }: ProductCardProps) {
         {/* Image Container */}
         <div className="relative aspect-square bg-muted overflow-hidden">
           <img
-            src={product.image || "/placeholder.svg"}
+            src={getImagePath(product.image || "/placeholder.svg")}
             alt={product.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />

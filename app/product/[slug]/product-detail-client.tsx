@@ -7,6 +7,7 @@ import { AnimatedStars } from "@/components/animated-stars"
 import { Button } from "@/components/ui/button"
 import { useCart, useWishlist } from "@/lib/store"
 import { Heart, Share2 } from "lucide-react"
+import { getImagePath } from "@/lib/utils-path"
 
 export function ProductDetailClient({ product, relatedProducts }: { product: Product; relatedProducts: Product[] }) {
     const [quantity, setQuantity] = useState(1)
@@ -41,7 +42,7 @@ export function ProductDetailClient({ product, relatedProducts }: { product: Pro
             <div className="space-y-4">
                 <div className="aspect-square rounded-xl overflow-hidden bg-muted border border-border">
                     <img
-                        src={product.image || "/placeholder.svg"}
+                        src={getImagePath(product.image || "/placeholder.svg")}
                         alt={product.name}
                         className="w-full h-full object-cover"
                     />
