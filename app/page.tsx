@@ -9,6 +9,7 @@ import { HeroCarousel } from "@/components/hero-carousel"
 import CardSwap, { Card } from "@/components/CardSwap"
 import CountUp from "@/components/count-up"
 import { ScrollAnimation } from "@/components/scroll-animation"
+import { getImagePath } from "@/lib/utils-path"
 
 export default function HomePage() {
   const hotDeals = products.filter((p) => p.isHotDeal).slice(0, 4)
@@ -94,7 +95,7 @@ export default function HomePage() {
                       >
                         <div className="relative w-full h-full">
                           <img
-                            src={product.image || "/placeholder.svg"}
+                            src={getImagePath(product.image || "/placeholder.svg")}
                             alt={product.name}
                             className="w-full h-full object-cover"
                           />
